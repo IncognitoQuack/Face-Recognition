@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Emotion Recognition</title>
+  <script defer src="face-api.min.js"></script>
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Facial Expression Analyzer</h1>
+      <div class="tabs">
+        <div class="tab active" id="cameraTab">Analyze with Camera</div>
+        <div class="tab" id="imageTab">Analyze an Image</div>
+      </div>
+    </header>
+
+    <section class="content active" id="cameraContent">
+      <div class="camera-wrapper">
+        <video id="video" width="720" height="560" autoplay muted></video>
+        <canvas id="cameraCanvas"></canvas>
+        <div id="camera-log" class="log"></div>
+        <div class="controls">
+          <button id="startButton">Start Video</button>
+          <button id="stopButton">Stop Video</button>
+        </div>
+        <div id="cameraSummary" class="summary"></div>
+      </div>
+    </section>
+
+    <section class="content" id="imageContent">
+      <div class="image-upload-wrapper">
+        <input type="file" id="imageUpload" accept="image/*" />
+        <input type="text" id="imageUrl" placeholder="Enter image URL" />
+        <button id="urlSubmit">Submit URL</button>
+        <div class="drop-zone" id="dropZone">Drag and drop an image here</div>
+        <img id="uploadedImage" />
+        <canvas id="imageCanvas"></canvas>
+        <div id="results" class="summary"></div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
